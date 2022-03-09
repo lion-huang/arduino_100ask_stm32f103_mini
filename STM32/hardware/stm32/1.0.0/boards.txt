@@ -1,0 +1,67 @@
+# STM32 Boards
+
+menu.opt=Optimize
+menu.upload_method=Upload method
+#menu.cpu_speed=CPU Speed(MHz)
+
+
+###################### 100ASK_STM32F103_MINI ########################################
+100ASK_STM32F103_MINI.name=100ASK_STM32F103_MINI
+100ASK_STM32F103_MINI.vid.0=0x1EAF
+100ASK_STM32F103_MINI.pid.0=0x0004
+#100ASK_STM32F103_MINI.build.variant=100ASK_STM32F103_MINI
+100ASK_STM32F103_MINI.build.vect=VECT_TAB_ADDR=0x8000000
+100ASK_STM32F103_MINI.build.core=stm32
+100ASK_STM32F103_MINI.build.variant=100ask_stm32f103_mini
+100ASK_STM32F103_MINI.build.board=100ASK_STM32F103_MINI
+100ASK_STM32F103_MINI.build.error_led_port=GPIOA
+100ASK_STM32F103_MINI.build.error_led_pin=1
+100ASK_STM32F103_MINI.upload.use_1200bps_touch=false
+100ASK_STM32F103_MINI.upload.file_type=bin
+100ASK_STM32F103_MINI.upload.auto_reset=true
+100ASK_STM32F103_MINI.upload.tool=maple_upload
+100ASK_STM32F103_MINI.upload.protocol=maple_dfu
+
+## STM32F103C8 -------------------------
+100ASK_STM32F103_MINI.menu.device_variant.STM32F103C8=100ASK_STM32F103_MINI
+100ASK_STM32F103_MINI.menu.device_variant.STM32F103C8.build.cpu_flags=-DMCU_STM32F103C8
+100ASK_STM32F103_MINI.menu.device_variant.STM32F103C8.build.ldscript=ld/jtag_c8.ld
+100ASK_STM32F103_MINI.menu.device_variant.STM32F103C8.upload.maximum_size=65536
+100ASK_STM32F103_MINI.menu.device_variant.STM32F103C8.upload.maximum_data_size=20480
+
+#---------------------------- UPLOAD METHODS ---------------------------
+
+100ASK_STM32F103_MINI.menu.upload_method.serialMethod=Serial
+100ASK_STM32F103_MINI.menu.upload_method.serialMethod.upload.protocol=maple_serial
+100ASK_STM32F103_MINI.menu.upload_method.serialMethod.upload.tool=serial_upload
+100ASK_STM32F103_MINI.menu.upload_method.serialMethod.build.upload_flags=-DCONFIG_MAPLE_MINI_NO_DISABLE_DEBUG
+
+100ASK_STM32F103_MINI.menu.upload_method.STLinkMethod=STLink
+100ASK_STM32F103_MINI.menu.upload_method.STLinkMethod.upload.protocol=STLink
+100ASK_STM32F103_MINI.menu.upload_method.STLinkMethod.upload.tool=stlink_upload
+100ASK_STM32F103_MINI.menu.upload_method.STLinkMethod.build.upload_flags=-DCONFIG_MAPLE_MINI_NO_DISABLE_DEBUG=1 -DSERIAL_USB -DGENERIC_BOOTLOADER
+
+#-- CPU Clock frequency
+100ASK_STM32F103_MINI.menu.cpu_speed.speed_72mhz=72Mhz (Normal)
+100ASK_STM32F103_MINI.menu.cpu_speed.speed_72mhz.build.f_cpu=72000000L
+100ASK_STM32F103_MINI.menu.cpu_speed.speed_48mhz=48Mhz (Slow - with USB)
+100ASK_STM32F103_MINI.menu.cpu_speed.speed_48mhz.build.f_cpu=48000000L
+100ASK_STM32F103_MINI.menu.cpu_speed.speed_128mhz=Overclocked 128Mhz NO USB SERIAL. MANUAL RESET NEEDED TO UPLOAD
+100ASK_STM32F103_MINI.menu.cpu_speed.speed_128mhz.build.f_cpu=128000000L
+
+#-- Optimizations
+100ASK_STM32F103_MINI.menu.opt.osstd=Smallest (default)
+100ASK_STM32F103_MINI.menu.opt.o1std=Fast (-O1)
+100ASK_STM32F103_MINI.menu.opt.o1std.build.flags.optimize=-O1
+100ASK_STM32F103_MINI.menu.opt.o1std.build.flags.ldspecs=
+100ASK_STM32F103_MINI.menu.opt.o2std=Faster (-O2)
+100ASK_STM32F103_MINI.menu.opt.o2std.build.flags.optimize=-O2
+100ASK_STM32F103_MINI.menu.opt.o2std.build.flags.ldspecs=
+100ASK_STM32F103_MINI.menu.opt.o3std=Fastest (-O3)
+100ASK_STM32F103_MINI.menu.opt.o3std.build.flags.optimize=-O3
+100ASK_STM32F103_MINI.menu.opt.o3std.build.flags.ldspecs=
+100ASK_STM32F103_MINI.menu.opt.ogstd=Debug (-g)
+100ASK_STM32F103_MINI.menu.opt.ogstd.build.flags.optimize=-Og
+100ASK_STM32F103_MINI.menu.opt.ogstd.build.flags.ldspecs=
+
+################################################################################
