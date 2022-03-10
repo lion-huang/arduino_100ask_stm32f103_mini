@@ -144,4 +144,3 @@ tools.jlink_upload.path.linux64={runtime.hardware.path}/tools/linux64
 tools.jlink_upload.upload.params.verbose=-d
 tools.jlink_upload.upload.params.quiet=n
 tools.jlink_upload.upload.pattern="{path}/{cmd}" "{build.path}/{build.project_name}.bin"
-
