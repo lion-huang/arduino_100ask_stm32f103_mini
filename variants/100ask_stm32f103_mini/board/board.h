@@ -78,7 +78,7 @@
 #define BOARD_USB_DISC_DEV        NULL
 #define BOARD_USB_DISC_BIT        NULL
 
-#define LED_BUILTIN PC13
+//#define LED_BUILTIN PA0
 
 // Note this needs to match with the PIN_MAP array in board.cpp
 enum {
